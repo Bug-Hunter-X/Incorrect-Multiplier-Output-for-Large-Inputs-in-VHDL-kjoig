@@ -1,0 +1,5 @@
+# VHDL Multiplier Bug
+This repository demonstrates a common bug in VHDL code related to signal type mismatches when performing multiplication, especially with larger input values. The original `multiplier.vhdl` code produces incorrect results for larger inputs because it doesn't handle potential overflow and implicit type conversions. The solution provided in `multiplier_solution.vhdl` addresses these issues.
+
+## Bug Description
+The bug stems from directly multiplying two `STD_LOGIC_VECTOR` signals without proper type conversion to an unsigned type (`UNSIGNED`). This leads to bit-wise logical operations rather than arithmetic multiplication, resulting in incorrect outputs. Additionally, the output signal `result` might not be wide enough to accommodate the result of the multiplication, leading to overflow.  The solution demonstrates correct type handling and overflow prevention.
